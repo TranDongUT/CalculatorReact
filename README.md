@@ -1,3 +1,13 @@
+# Practice:
+  components: DigitButton, OperatorButton, Calculator
+  using useReducer, useContext
+  still have bugs on deleteBtn -> fixing
+
+# Demo
+
+![2](https://user-images.githubusercontent.com/84276205/156909037-a7664545-fae8-48bc-a580-bdd4401e46ea.jpg)
+![3](https://user-images.githubusercontent.com/84276205/156909039-1d35373e-a4a3-43eb-974d-8cba66477ff0.jpg)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
