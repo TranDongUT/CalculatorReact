@@ -1,7 +1,7 @@
 # Practice:
-  components: DigitButton, OperatorButton, Calculator
-  using useReducer, useContext
-  still have bugs on deleteBtn -> fixing
+  components: DigitButton, OperatorButton, Calculator.\
+  using useReducer, useContext.\
+  still have bugs on deleteBtn -> fixing.\
 
 # Demo
 
