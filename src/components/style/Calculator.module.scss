@@ -1,0 +1,46 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .calculator {
+    width: 360px;
+    height: 600px;
+    padding: 25px 0;
+    background-color: #f4fdfc;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px;
+
+    .outputField {
+      height: 30%;
+      input {
+        transform: translateY(60%);
+        //outline: none;
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        font-size: 60px;
+        text-align: right;
+        font-weight: 600;
+      }
+    }
+
+    .buttons {
+      height: 70%;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}

@@ -1,0 +1,23 @@
+.operation {
+  font-size: 30px;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+  font-weight: 600;
+  background-color: #b4e0d1;
+  transition: all 0.5s linear;
+  cursor: pointer;
+  &:hover {
+    background-color: #18d3a4;
+    color: #fff;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.special {
+  background-color: #18d3a4;
+  color: #fff;
+}

@@ -1,0 +1,17 @@
+.digit {
+  font-size: 30px;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+  font-weight: 600;
+  background-color: transparent;
+  transition: all 0.5s linear;
+  &:hover {
+    cursor: pointer;
+    background-color: #a6e6d0;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+}
