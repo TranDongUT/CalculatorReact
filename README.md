@@ -2,6 +2,7 @@
   components: DigitButton, OperatorButton, Calculator.\
   using useReducer, useContext.\
   still have bugs on deleteBtn -> fixing.\
+  https://trandongut.github.io/CalculatorReact/
 
 # Demo
 
