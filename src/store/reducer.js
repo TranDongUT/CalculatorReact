@@ -17,10 +17,10 @@ export const initState = {
 };
 
 export function reducer(state, action) {
-  console.log("digit: ", state.digit);
-  console.log("store: ", state.store);
-  console.log("current: ", state.current);
-  console.log("operator: ", state.operator);
+  // console.log("digit: ", state.digit);
+  // console.log("store: ", state.store);
+  // console.log("current: ", state.current);
+  // console.log("operator: ", state.operator);
   switch (action.type) {
     case INSERT_DIGIT:
       if (action.payload == "." && state.current.includes(".")) {
@@ -82,29 +82,46 @@ export function reducer(state, action) {
             throw new Error("invalid operator");
         }
       }
+      if (action.payload != "=") {
+        return {
+          ...state,
+          operator: action.payload != "=" ? action.payload : "", //new operator
+          store: result.toString(),
+          digit: "",
+          current: action.payload != "=" ? result : "",
+          output: `${result}${action.payload != "=" ? action.payload : ""}`,
+        };
+      }
       return {
         ...state,
         operator: action.payload != "=" ? action.payload : "", //new operator
         store: "",
-        digit: result,
+        digit: result.toString(),
         current: action.payload != "=" ? result : "",
         output: `${result}${action.payload != "=" ? action.payload : ""}`,
       };
 
     case DELETE:
+      let newDigit = 0;
       if (!isNaN(state.current)) {
         if (!state.store) {
-          state.digit = state.output.slice(0, -1);
+          state.digit = state.digit.slice(0, -1);
+          console.log(state);
         } else if (!state.digit) {
-          state.store = state.output.slice(0, -1);
+          state.store = state.store.slice(0, -1);
+          console.log(state);
+        } else if (state.store && state.digit) {
+          newDigit = state.digit.slice(0, -1);
+          console.log(state);
         }
       } else {
         state.operator = "";
       }
-
+      // console.log(state);
       return {
         ...state,
-        current: state.output[state.output.length - 2],
+        digit: newDigit,
+        current: state.output[state.output.length - 1],
         output: state.output.slice(0, -1),
       };
 
