@@ -6,7 +6,6 @@ function Operation({ special, children }) {
   const [state, dispatch] = useContext(StoreContext);
 
   const handleOperator = (operator) => {
-    console.log(operator);
     if (
       operator == "." ||
       operator == "=" ||
@@ -27,6 +26,7 @@ function Operation({ special, children }) {
           dispatch(actions.calculate(operator));
       }
     } else if (!isNaN(state.current) && !state.operator) {
+      console.log("ok");
       dispatch(actions.insertOperator(operator));
     } else if (!isNaN(state.current) && state.operator && operator !== ".") {
       dispatch(actions.calculate(operator));

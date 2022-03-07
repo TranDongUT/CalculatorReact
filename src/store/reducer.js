@@ -84,16 +84,27 @@ export function reducer(state, action) {
       }
       return {
         ...state,
-        operator: action.payload, //new operator
-        store: result,
-        digit: "",
-        current: action.payload,
+        operator: action.payload != "=" ? action.payload : "", //new operator
+        store: "",
+        digit: result,
+        current: action.payload != "=" ? result : "",
         output: `${result}${action.payload != "=" ? action.payload : ""}`,
       };
 
     case DELETE:
+      if (!isNaN(state.current)) {
+        if (!state.store) {
+          state.digit = state.output.slice(0, -1);
+        } else if (!state.digit) {
+          state.store = state.output.slice(0, -1);
+        }
+      } else {
+        state.operator = "";
+      }
+
       return {
         ...state,
+        current: state.output[state.output.length - 2],
         output: state.output.slice(0, -1),
       };
 
